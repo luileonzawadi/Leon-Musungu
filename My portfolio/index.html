@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Home Page -->
+  <section id="home" class="home-section">
+    <div class="overlay">
+      <h1>LEON MUSUNGU</h1>
+        <!-- Header -->
+  <header>
+      <!-- Resume Section -->
+<section id="resume">
+  <h4>My Resume</h4>
+  <p>Click the button below to view or download my resume.</p>
+  <div class="resume-container">
+    <a href="resume.pdf" target="_blank" class="resume-button">View Resume</a>
+  </div>
+</section>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+    </div>
+  </section>
+
+ <!-- Projects Section -->
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <img src="project1.jpg" alt="Project 1" class="project-image">
+      <div class="project-content">
+        <h3>Online appointment schduler system</h3>
+        <p>A cool web app that solves real-world problems with an intuitive interface.</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="project2.jpg" alt="Project 2" class="project-image">
+      <div class="project-content">
+        <h3>AI chatbot for mental health</h3>
+        <p>An innovative e-commerce platform designed for seamless shopping experiences.</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="project3.jpg" alt="Project 3" class="project-image">
+      <div class="project-content">
+        <h3>Stoke inventory system</h3>
+        <p>A creative portfolio design showcasing modern web development techniques.</p>
+        <a href="#" class="project-link">View Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Skills Section -->
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <p>Here are the technologies I work with:</p>
+    <div class="skills-grid">
+      <div class="skill-item">
+        <img src="html-logo.png" alt="HTML Logo" class="skill-logo">
+        <h3>HTML</h3>
+      </div>
+      <div class="skill-item">
+        <img src="python-logo.png" alt="CSS Logo" class="skill-logo">
+        <h3>CSS</h3>
+      </div>
+      <div class="skill-item">
+        <img src="javascript-logo.png" alt="JavaScript Logo" class="skill-logo">
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-item">
+        <img src="react-logo.png" alt="React Logo" class="skill-logo">
+        <h3>React</h3>
+      </div>
+      <div class="skill-item">
+        <img src="nodejs-logo.png" alt="Node.js Logo" class="skill-logo">
+        <h3>Node.js</h3>
+      </div>
+    </div>
+  </section>
+
+    <!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out to me via social media or email!</p>
+  <div class="contact-container">
+    <!-- Social Media Section -->
+    <div class="social-media">
+      <h3>Connect with me:</h3>
+      <ul>
+        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+      </ul>
+    </div>
+
+    <!-- Email Form Section -->
+    <div class="email-form">
+      <h3>Send me a message:</h3>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name"><i class="fas fa-user"></i></label>
+          <div class="input-line">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> </label>
+          <div class="input-line">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message"><i class="fas fa-comment"></i></label>
+          <div class="input-line">
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="form-status" style="margin-top: 20px; color: #0f0;"></p>
+    </div>
+  </div>
+</section>
+
+<!-- Include Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Include EmailJS Script -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("oBvaQp12SGhZ2biNQ"); // Replace with your EmailJS Public Key
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formStatus = document.getElementById("form-status");
+    formStatus.textContent = "Sending...";
+
+    emailjs.sendForm("service_t9bizie", "template_i8ug6z8", this)
+      .then(() => {
+        formStatus.textContent = "Message sent successfully!";
+        this.reset(); // Reset the form fields
+      })
+      .catch(() => {
+        formStatus.textContent = "Failed to send the message. Please try again.";
+      });
+  });
+</script>
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+ <!-- Visible Line -->
+   <hr class="end-line">
+</body>
+</html>
