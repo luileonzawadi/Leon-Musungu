@@ -3,23 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Projects | Leon Musungu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div id="header"></div>
 
-    <section class="portfolio-section">
-        <h1>Portfolio</h1>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <h3>Web Design</h3>
-                <p>Comps forum dater via amet,<br>consectetur adipiscing elit.</p>
+    <section class="projects-section">
+        <div class="section-header">
+            <span class="section-subtitle">My Work</span>
+            <h1>Projects</h1>
+        </div>
+
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Dev</button>
+            <button class="filter-btn" data-filter="cloud">Cloud</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+        </div>
+
+        <div class="projects-container">
+            <div class="project-card" data-category="web">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400" alt="E-commerce Website">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>E-commerce Website</h3>
+                    <p>A fully responsive e-commerce platform with payment integration and user authentication.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
             </div>
-            <!-- Add more portfolio items as needed -->
+
+            <div class="project-card" data-category="cloud">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400" alt="Cloud Storage App">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Cloud Storage App</h3>
+                    <p>Secure cloud storage solution with file sharing capabilities and access control.</p>
+                    <div class="project-tags">
+                        <span>AWS</span>
+                        <span>Node.js</span>
+                        <span>React</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400" alt="AI Chatbot">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>AI Chatbot</h3>
+                    <p>Intelligent chatbot that uses natural language processing to provide customer support.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>NLP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="web">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400" alt="Portfolio Website">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>Modern portfolio website with smooth animations and responsive design.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="cloud">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400" alt="Serverless API">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Serverless API</h3>
+                    <p>Scalable serverless API built with AWS Lambda and API Gateway.</p>
+                    <div class="project-tags">
+                        <span>AWS</span>
+                        <span>Lambda</span>
+                        <span>DynamoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400" alt="Image Recognition App">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>Image Recognition App</h3>
+                    <p>Mobile application that identifies objects in images using machine learning.</p>
+                    <div class="project-tags">
+                        <span>TensorFlow</span>
+                        <span>Flutter</span>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <script src="shared/header.js"></script>
+    <script>
+        // Project filtering functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter projects
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
