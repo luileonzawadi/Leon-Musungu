@@ -793,6 +793,15 @@ body {
     background-color: #28a745;
 }
 
+.send-btn.error {
+    background-color: #dc3545;
+}
+
+.send-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-container {

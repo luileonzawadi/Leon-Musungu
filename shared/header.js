@@ -6,7 +6,7 @@ document.getElementById('header').innerHTML = `
             <a href="about.html">About</a>
             <a href="skills.html">Skills</a>
             <a href="projects.html">Projects</a>
-            <a href="achievements.html">Achievements</a>
+            <a href="Achievements.html">Achievements</a>
             <a href="contact.html">Contact</a>
         </div>
         <div class="menu-toggle" id="menuToggle">

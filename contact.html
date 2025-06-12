@@ -83,8 +83,15 @@
     </section>
 
     <script src="shared/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-        // Form Validation
+        // Initialize EmailJS
+        (function() {
+            // Add your EmailJS public key here
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+        
+        // Form Validation and Submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -101,16 +108,42 @@
             });
 
             if (isValid) {
-                // Add your form submission logic here
                 const submitBtn = document.querySelector('.send-btn');
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.classList.add('success');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
                 
-                setTimeout(() => {
-                    submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
-                    submitBtn.classList.remove('success');
-                    this.reset();
-                }, 3000);
+                // Prepare template parameters
+                const templateParams = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    to_name: "Leon Musungu"
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function() {
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                        submitBtn.classList.add('success');
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+                            submitBtn.classList.remove('success');
+                            submitBtn.disabled = false;
+                            document.getElementById('contactForm').reset();
+                        }, 3000);
+                    }, function(error) {
+                        submitBtn.innerHTML = '<i class="fas fa-times"></i> Failed to Send';
+                        submitBtn.classList.add('error');
+                        console.error('EmailJS error:', error);
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+                            submitBtn.classList.remove('error');
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    });
             }
         });
 
