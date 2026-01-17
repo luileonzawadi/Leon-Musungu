@@ -1986,6 +1986,11 @@ body {
   }
 }
 
+/* Default: Hide mobile menu toggle on desktop */
+.menu-toggle {
+  display: none;
+}
+
 /* Immersive Full-Screen Mobile Menu */
 @media (max-width: 768px) {
   .nav-links {
@@ -2076,8 +2081,4 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
-}
-
-.menu-toggle {
-  display: none;
 }
